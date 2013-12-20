@@ -20,7 +20,7 @@
     <form role="form" method='POST' enctype="multipart/form-data" action='/users/new_photo_upload/'>
         Upload a photo for your profile:
         <br>
-        <input type="file" name="avatar" id="avatar">
+        <input type="file" name="avatar" id="avatar" accept="image/*" >
         <br>
          <input type="submit" name="Update">
         <br>
