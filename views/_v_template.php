@@ -18,7 +18,7 @@
     <script type="text/javascript" src="/js/hot-sneaks.js"></script>
     
     <!-- Google Font Link -->
-   <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
 
 	<!-- Controller Specific JS/CSS -->
 	<?php if(isset($client_files_head)) echo $client_files_head; ?>
@@ -70,7 +70,7 @@
 
 	     <?php if(isset($client_files_body)) echo $client_files_body; ?>
 
-        </div> <!-- end of wrapper -->
+    </div> <!-- end of wrapper -->
 
 
 </body>

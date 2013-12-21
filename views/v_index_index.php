@@ -2,7 +2,7 @@
         <h1>Welcome to <?=APP_NAME?> <br></h1>
 
         <h4>Here you can keep track of your fitness related activities.  <br> 
-            See what other members are doing to stay fit be motivated <br>
+            See what other members are doing to stay motivated <br>
         </h4>
 
         This is a website where you can: <br>

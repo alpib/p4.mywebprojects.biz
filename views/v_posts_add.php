@@ -5,7 +5,7 @@
     <textarea name='content' id='content'></textarea>
 
     <br><br>
-    <input type='submit' value='New post'>
+    <input type='submit' id='button' value='New post'>
 
 </form> 
 </div>
