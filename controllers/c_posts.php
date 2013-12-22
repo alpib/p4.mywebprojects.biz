@@ -148,12 +148,11 @@ class posts_controller extends base_controller {
     }
 
 
-
     public function followedposts() {
 
     # Set up the View
     $this->template->content = View::instance('v_posts_followedposts');
-    $this->template->title   = "What Chitchatters you follow are saying";
+    $this->template->title   = "FollowedPosts";
 
     # Query
     $q = 'SELECT 
@@ -181,53 +180,6 @@ class posts_controller extends base_controller {
 
 }
     
-
-    public function editpost($edited) {
-            # Set up the View
-            $this->template->content = View::instance('v_posts_editpost');
-                    
-            # Build the query to get the post
-           $q2 = "SELECT posts .* , 
-                    users.first_name, 
-                    users.last_name
-                    FROM posts
-                    INNER JOIN users 
-                    ON posts.user_id = users.user_id
-                    WHERE users.user_id = ".$this->user->user_id."
-                    ORDER BY posts.created DESC"
-                    ;
-
-            # Execute the query to get all the users.
-            # Store the result array in the variable $post
-            $_POST['editable'] = DB::instance(DB_NAME)->select_row($q);
-            
-            # Pass data to the view
-            $this->template->content->post = $_POST['editable'];
-            
-            # print_r($_POST);
-            # Render template
-                echo $this->template;         
-
-    }
-    
-    public function p_editpost($id) {
-                        
-                  
-            # Set the modified time
-            $_POST['modified'] = Time::now();
-            
-            # Be sure to Associate this post with this user
-            $_POST['user_id'] = $this->user->user_id;
-         
-                # set up the where conditon and update the post.
-                $where_condition = 'WHERE post_id = '.$id;
-                $updated_post = DB::instance(DB_NAME)->update('posts', $_POST, $where_condition);
-
-                # Send them back
-               Router::redirect('/users/profile');
-    }
-
-
 
 } # End of class
 

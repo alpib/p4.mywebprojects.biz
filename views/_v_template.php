@@ -9,8 +9,10 @@
     <link rel=stylesheet type="text/css" href="/css/master.css">
     <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/hot-sneaks/jquery-ui.css">
     
-    <!-- JS File we want on every page -->
+    <!-- JS File we want on every page
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    -->
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     
     <!-- Google Font Link -->
     <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
@@ -43,9 +45,9 @@
             <li><a href='/activities/myactivities'>My Activity</a></li>
             <li><a href='/activities/index'>All</a></li>
             <li><a href='/posts/add'>Comment</a></li>
-            <li><a href='/posts/followedposts'>My Followers</a></li>
             <li><a href='/posts/users'>Members</a></li>
             <li><a href='/posts/index'>Discussion</a></li>
+            <li><a href='/posts/followedposts'>Follower comments</a></li>
 
             <!-- Menu options for users who are not logged in -->
             <?php else: ?>
@@ -66,6 +68,7 @@
 	     <?php if(isset($client_files_body)) echo $client_files_body; ?>
 
     </div> <!-- end of wrapper -->
+
 
     <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
     <script type="text/javascript" src="/js/hot-sneaks.js"></script>

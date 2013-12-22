@@ -11,12 +11,8 @@ class users_controller extends base_controller {
         echo "This is the index page";
     }
 
-    public function signup() {
-        //If they are already logged in redirect to profile;
-        if($this->user) { #If they are already logged in
-        Router::redirect('/users/profile');
-        }
-
+       public function signup() {
+        //echo "This is the signup page";
         # Setup view
         $this->template->content = View::instance('v_users_signup');
         $this->template->title   = "Signup";
@@ -28,14 +24,12 @@ class users_controller extends base_controller {
         echo $this->template;
     }
 
-    public function p_signup() {
+
+       public function p_signup() {
 
         # Set Up view
         $this->template->content = View::instance('v_users_signup');
         $this->template->title = "Sign Up";
-
-        $client_files_head = Array("/js/jquery-1.10.2.min.js","/js/jstz-1.0.4.min.js","http://cdnjs.cloudflare.com/ajax/libs/jstimezonedetect/1.0.4/jstz.min.js");
-        $this->template->client_files_head = Utils::load_client_files($client_files_head);
                 
         # No errors yet
         $error = false;
@@ -261,7 +255,9 @@ class users_controller extends base_controller {
 
         if($activities) {
             # Display logged in user's post on their profile page
-            $client_files_head = Array("http://code.highcharts.com/highcharts.js","http://code.highcharttable.org/master/jquery.highchartTable-min.js","/js/highchart.js");
+            $client_files_head = Array("http://code.highcharts.com/highcharts.js",
+                "http://code.highcharttable.org/master/jquery.highchartTable-min.js",
+                "/js/highchart.js");
             $this->template->client_files_head = Utils::load_client_files($client_files_head);
 
             $this->template->content->myActivities = View::instance('v_users_activities');

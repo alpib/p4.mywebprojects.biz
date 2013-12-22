@@ -2,7 +2,7 @@
 <?php foreach($activities as $activity): ?>
 
     <article>
-        <h2><?=$activity['first_name']?> <?=$activity['last_name']?> did the following activities:</h2>
+        <h3><?=$activity['first_name']?> <?=$activity['last_name']?> did the following activities:</h3>
  
         <h4>Activity:<?=$activity['activitytype']?> for: <?=$activity['activitytime']?>mins. Calories Burned: <?=$activity['caloriesburned']?></h4>
         <p>

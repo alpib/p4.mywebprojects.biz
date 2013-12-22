@@ -55,11 +55,11 @@ class activities_controller extends base_controller {
     }
 
 
-    public function p_deletepost($activity_id) {
+    public function p_deleteact($activity_id) {
         $data = "WHERE activity_id = ".$activity_id; 
         DB::instance(DB_NAME)->delete('activities',$data);
 
-        Router::redirect('/users/profile'); 
+        Router::redirect('/activities/index'); 
     }
 
 
@@ -92,7 +92,13 @@ class activities_controller extends base_controller {
     public function myactivities() {
 
     # Set up the View
-    $client_files_head = Array("http://code.highcharts.com/highcharts.js","http://code.highcharttable.org/master/jquery.highchartTable-min.js","/js/highchart.js","/js/jquery.dataTables.js", "/css/jquery.dataTables_themeroller.css","/css/demo_table.css");
+    $client_files_head = Array(
+        "http://code.highcharts.com/highcharts.js",
+        "http://code.highcharttable.org/master/jquery.highchartTable-min.js",
+        "/js/highchart.js","/js/jquery.dataTables.js", 
+        "/css/jquery.dataTables_themeroller.css",
+        "/css/demo_table.css");
+
     $this->template->client_files_head = Utils::load_client_files($client_files_head);
     $this->template->content = View::instance('v_activities_myactivities');
     $this->template->title   = "My Activities";
@@ -179,88 +185,6 @@ class activities_controller extends base_controller {
     Router::redirect("/activities/users");
 
     }
-
-
-
-    public function followedposts() {
-
-    # Set up the View
-    $this->template->content = View::instance('v_posts_followedposts');
-    $this->template->title   = "What Chitchatters you follow are saying";
-
-    # Query
-    $q = 'SELECT 
-            posts.content,
-            posts.created,
-            posts.user_id AS post_user_id,
-            users_users.user_id AS follower_id,
-            users.first_name,
-            users.last_name
-        FROM posts
-        INNER JOIN users_users 
-            ON posts.user_id = users_users.user_id_followed
-        INNER JOIN users 
-            ON posts.user_id = users.user_id
-        WHERE users_users.user_id = '.$this->user->user_id;
-
-    # Run the query, store the results in the variable $posts
-    $posts = DB::instance(DB_NAME)->select_rows($q);
-
-    # Pass data to the View
-    $this->template->content->posts = $posts;
-
-    # Render the View
-    echo $this->template;
-
-}
-    
-
-    public function editactivity($activity_id) {
-            # Set up the View
-            $this->template->content = View::instance('v_activities_editact');
-                    
-            # Build the query to get the post
-           $q2 = "SELECT activities .* , 
-                    users.first_name, 
-                    users.last_name
-                    FROM activities
-                    INNER JOIN users 
-                    ON activities.user_id = users.user_id
-                    WHERE users.user_id = ".$this->user->user_id."
-                    ORDER BY activities.created DESC"
-                    ;
-
-            # Execute the query to get all the users.
-            # Store the result array in the variable $post
-            $_POST['editable'] = DB::instance(DB_NAME)->select_row($q);
-            
-            # Pass data to the view
-            $this->template->content->activity = $_POST['editable'];
-            
-            # print_r($_POST);
-            # Render template
-                echo $this->template;         
-
-    }
-    
-    public function p_editactivity($activity_id) {
-                        
-                  
-            # Set the modified time
-            $_POST['modified'] = Time::now();
-            
-            # Be sure to Associate this activity with this user
-            $_POST['user_id'] = $this->user->user_id;
-         
-                # set up the where conditon and update the activity.
-                $where_condition = 'WHERE user_id = '.$id;
-                $updated_post = DB::instance(DB_NAME)->update('activities', $_POST, $where_condition);
-
-                # Send them back
-               Router::redirect('/users/profile');
-    }
-
-
 
 } # End of class
 

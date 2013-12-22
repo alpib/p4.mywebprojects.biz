@@ -2,14 +2,14 @@
 <?php foreach($posts as $post): ?>
 
     <article>
-        <h2><?=$post['first_name']?> <?=$post['last_name']?> posted:</h2>
+        <h3><?=$post['first_name']?> <?=$post['last_name']?> posted:</h3>
  
-        <p><?=$post['content']?></p>
-        <h4>
+        <h4><?=$post['content']?></h4>
+        <p>
         <time datetime="<?=Time::display($post['created'],'Y-m-d G:i')?>">
         <?=Time::display($post['created'])?>
         </time>
-        </h4>
+        </p>
          <!-- delete option if the post belongs to user -->
         <?php if($post['user_id'] == $user->user_id): ?>
                 
