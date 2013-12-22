@@ -10,12 +10,7 @@
     <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/hot-sneaks/jquery-ui.css">
     
     <!-- JS File we want on every page -->
-    <script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.js"></script>
-    <!--
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-    -->
-    <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
-    <script type="text/javascript" src="/js/hot-sneaks.js"></script>
     
     <!-- Google Font Link -->
     <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
@@ -72,7 +67,8 @@
 
     </div> <!-- end of wrapper -->
 
-
+    <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+    <script type="text/javascript" src="/js/hot-sneaks.js"></script>
 </body>
 </html>
 				

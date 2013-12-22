@@ -21,12 +21,12 @@
 
     <span style="color:darkred;font-weight:bold">*</span>
     <label for='activitytime'>For how long? (in mins)</label>
-    <input class='searchfield' type='text' required name='activitytime' id='activitytime' size='30' >
+    <input class='searchfield' type='text' required name='activitytime' id='activitytime' onkeypress="return numbersonly(event)" size='30' placeholder='Numbers only'>
     <br><br>
 
     <span style="color:darkred;font-weight:bold">*</span>
     <label for='caloriesburned'>Approximate calories burned:</label>
-    <input class='searchfield' required name='caloriesburned' id='caloriesburned' size='30' >
+    <input class='searchfield' required name='caloriesburned' id='caloriesburned' onkeypress="return numbersonly(event)" size='30' placeholder='Numbers only' >
     <br><br>
 
     <span style="color:#fff;font-weight:bold">*</span>
@@ -40,6 +40,8 @@
 
     <br><br>
     <input type='submit' id='button' value='Add New Activity'>
+    <br>
+   
 
 </form> 
 </div>

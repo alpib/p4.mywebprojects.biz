@@ -12,7 +12,11 @@ class users_controller extends base_controller {
     }
 
     public function signup() {
-        //echo "This is the signup page";
+        //If they are already logged in redirect to profile;
+        if($this->user) { #If they are already logged in
+        Router::redirect('/users/profile');
+        }
+
         # Setup view
         $this->template->content = View::instance('v_users_signup');
         $this->template->title   = "Signup";

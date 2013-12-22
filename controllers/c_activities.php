@@ -13,6 +13,9 @@ class activities_controller extends base_controller {
     public function add() {
 
         # Setup view
+        # Set up the View
+        $client_files_head = Array("/js/BeActive.js");
+        $this->template->client_files_head = Utils::load_client_files($client_files_head);
         $this->template->content = View::instance('v_activities_add');
         $this->template->title   = "New Activity";
 
@@ -42,7 +45,7 @@ class activities_controller extends base_controller {
 
     public function confirm_deleteactivity($activity_id) {
         # Set up the View
-        $this->template->content = View::instance('v_activities_deleteactivity');
+        $this->template->content = View::instance('v_activities_deleteact');
         $this->template->title   = "Confirm delete?";
         $this->template->content->activity_id = $activity_id;
 
@@ -212,9 +215,9 @@ class activities_controller extends base_controller {
 }
     
 
-    public function editactivity($edited) {
+    public function editactivity($activity_id) {
             # Set up the View
-            $this->template->content = View::instance('v_activities_editpost');
+            $this->template->content = View::instance('v_activities_editact');
                     
             # Build the query to get the post
            $q2 = "SELECT activities .* , 
@@ -240,7 +243,7 @@ class activities_controller extends base_controller {
 
     }
     
-    public function p_editactivity($id) {
+    public function p_editactivity($activity_id) {
                         
                   
             # Set the modified time
