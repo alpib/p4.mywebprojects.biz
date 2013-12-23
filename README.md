@@ -13,15 +13,15 @@ User can also participate in a discussion.
 
 
 Features:
-# User has to sign up to be a member
-# user can upload photo to their profile
-# Members can add activities
-# View a list of activies they have added
-# View a list of activities that other members have added
-# Post a comment in the discussion section
-# View other comments
-# Follow/unfollow other members
-# View comments of members that use follows
+- User has to sign up to be a member
+- user can upload photo to their profile
+- Members can add activities
+- View a list of activies they have added
+- View a list of activities that other members have added
+- Post a comment in the discussion section
+- View other comments
+- Follow/unfollow other members
+- View comments of members that use follows
 
 This is built using the php framework from Project 2.
 Javascript use:
