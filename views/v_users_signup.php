@@ -1,11 +1,11 @@
 <div id="contentview">
 <form method='POST' action='/users/p_signup'>
-    <h5>
+
     <div class='error'>
     <?php if(isset($error_email)) echo $error_email; ?>        
     <?php if(isset($error)) echo $error; ?>        
     </div>
-    </h5>
+
 
     <h3>Please signup here:</h3>
     <h5>All fields are required</h5>

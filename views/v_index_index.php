@@ -26,8 +26,8 @@
     </div>
 
         <div id="contentviewpaneright">
-        <img src="/uploads/physicalfitness.jpg">
+        <img src="/uploads/physicalfitness.jpg" alt="Active People">
         <br>
-        <img src="/uploads/physicalfitness.jpg">
+        <img src="/uploads/physicalfitness.jpg" alt="Active People">
     </div>
  </div>
