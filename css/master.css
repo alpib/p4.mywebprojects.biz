@@ -46,10 +46,8 @@ h5  {
      background-color: #93c5cd;
      border-top: gray solid 10px;
      border-bottom: gray solid 10px;
-     font-size: 70px;
      text-align: left;
      text-indent: 20px;
-
 }
 
 /*create a holder for nav menu: */
@@ -58,9 +56,10 @@ h5  {
 }
 
 #appname {
-     margin-left: 200px;
+     margin-left: 45px;
      overflow:hidden;
-     color:slategray;
+     color: navy;
+     font-size: 70px;
 }
 
 

@@ -24,7 +24,7 @@
     <div id="wrapper">
 
     <div id="header">
-        <div id"appname">
+        <div id="appname">
             BeActive
         </div>
     </div> <!-- end of header -->
