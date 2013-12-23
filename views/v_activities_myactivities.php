@@ -1,6 +1,14 @@
 <div id="contentview">
 
-	<h2>My activities:</h2>
+    <?php if($activities == false): ?>
+        <h2>You have no activities yet</h2>
+        <h3>Add some activties</h3>
+        <a href='/activities/add'>Add Activity</a>
+    <?php endif; ?>
+
+
+    <?php if($activities == true): ?>
+	<h3>My activities:</h3>
     <div id='contentviewpaneleft'>
         <table id="table_id" class="display">
         <thead>
@@ -52,5 +60,7 @@
     </tbody>
 
     </table>
+
+<?php endif; ?>
 
 </div>

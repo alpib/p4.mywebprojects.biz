@@ -5,6 +5,7 @@
         <h3><?=$activity['first_name']?> <?=$activity['last_name']?> did the following activities:</h3>
  
         <h4>Activity:<?=$activity['activitytype']?> for: <?=$activity['activitytime']?>mins. Calories Burned: <?=$activity['caloriesburned']?></h4>
+        <p>Notes: <?=$activity['notes']?></p>
         <p>
         <time datetime="<?=Time::display($activity['created'],'Y-m-d G:i')?>">
         <?=Time::display($activity['created'])?>

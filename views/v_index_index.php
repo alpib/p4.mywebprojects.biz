@@ -1,4 +1,7 @@
  <div id="contentview">
+
+
+    <div id="contentviewpaneleft">
         <h1>Welcome to <?=APP_NAME?> <br></h1>
 
         <h4>Here you can keep track of your fitness related activities.  <br> 
@@ -20,4 +23,11 @@
 
         <a href="/users/login">Login</a> if you are already a registered BeActive member.<br>
         or <a href="/users/signup">Signup</a> to create a new account 
+    </div>
+
+        <div id="contentviewpaneright">
+        <img src="/uploads/physicalfitness.jpg">
+        <br>
+        <img src="/uploads/physicalfitness.jpg">
+    </div>
  </div>

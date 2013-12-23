@@ -9,9 +9,7 @@
     <link rel=stylesheet type="text/css" href="/css/master.css">
     <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/hot-sneaks/jquery-ui.css">
     
-    <!-- JS File we want on every page
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-    -->
+    <!-- JS File we want on every page -->
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     
     <!-- Google Font Link -->
@@ -43,10 +41,10 @@
             <li><a href='/users/profile'>Profile</a></li>
             <li><a href='/activities/add'>Add Activity</a></li>
             <li><a href='/activities/myactivities'>My Activity</a></li>
-            <li><a href='/activities/index'>All</a></li>
-            <li><a href='/posts/add'>Comment</a></li>
+            <li><a href='/activities/index'>All Activity</a></li>
+            <li><a href='/posts/add'>Add Comment</a></li>
+            <li><a href='/posts/index'>View Comments</a></li>
             <li><a href='/posts/users'>Members</a></li>
-            <li><a href='/posts/index'>Discussion</a></li>
             <li><a href='/posts/followedposts'>Follower comments</a></li>
 
             <!-- Menu options for users who are not logged in -->

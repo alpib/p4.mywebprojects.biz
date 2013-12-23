@@ -22,7 +22,7 @@
         <br>
         <input type="file" name="avatar" id="avatar" accept="image/*" >
         <br>
-         <input type="submit" name="Update">
+         <input type="submit" name="Update" value='Update'>
         <br>
         </form>
     </div>

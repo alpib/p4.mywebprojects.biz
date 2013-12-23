@@ -12,7 +12,11 @@ class users_controller extends base_controller {
     }
 
        public function signup() {
-        //echo "This is the signup page";
+
+        if($this->user) { #If they are already logged in
+        Router::redirect('/users/profile');
+        }
+
         # Setup view
         $this->template->content = View::instance('v_users_signup');
         $this->template->title   = "Signup";
@@ -255,7 +259,8 @@ class users_controller extends base_controller {
 
         if($activities) {
             # Display logged in user's post on their profile page
-            $client_files_head = Array("http://code.highcharts.com/highcharts.js",
+            $client_files_head = Array(
+                "http://code.highcharts.com/highcharts.js",
                 "http://code.highcharttable.org/master/jquery.highchartTable-min.js",
                 "/js/highchart.js");
             $this->template->client_files_head = Utils::load_client_files($client_files_head);
@@ -277,7 +282,7 @@ class users_controller extends base_controller {
             $posts = DB::instance(DB_NAME)->select_rows($q);
 
             # Display recent posts from all users on the signed in profile page
-            $this->template->content->allPosts = View::instance('v_users_posts');
+            $this->template->content->allPosts = View::instance('v_posts_index');
             $this->template->content->allPosts->posts = $posts;
         }
 
